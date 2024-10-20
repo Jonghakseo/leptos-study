@@ -40,9 +40,9 @@ pub fn Flex(
     gap: Box<dyn Display>,
 ) -> impl IntoView {
     let style = {
-        let mut style: Vec<&str> = vec!["display: flex;"];
+        let mut style = vec![String::from("display: flex;")];
         if vertical {
-            style.push("flex-direction: column;");
+            style.push(String::from("flex-direction: column;"));
         }
         if width.to_string() != EMPTY {
             style.push(get_px_or_attribute("width", width));
@@ -78,10 +78,10 @@ pub fn Flex(
     view! { <div style=style>{children()}</div> }
 }
 
-fn get_px_or_attribute(attribute: &str, value: Box<dyn Display>) -> &str {
+fn get_px_or_attribute(attribute: &str, value: Box<dyn Display>) -> String {
     if value.to_string().parse::<i32>().is_ok() {
-        &format!("{}: {}px;", attribute, value)
+        format!("{}: {}px;", attribute, value)
     } else {
-        &format!("{}: {};", attribute, value)
+        format!("{}: {};", attribute, value)
     }
 }
