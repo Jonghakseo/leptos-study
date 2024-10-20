@@ -1,7 +1,8 @@
 [package]
-name = "leptos-study"
+name = "my_leptos"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-leptos = { version = "0.6.15", features = ["csr"] }
+console_error_panic_hook = "0.1.7"
+leptos = { version = "0.6.15", features = ["csr", "nightly"] }
