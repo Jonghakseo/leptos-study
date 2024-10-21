@@ -1,4 +1,5 @@
 use crate::components::ui::layout::Flex;
+use crate::v;
 use leptos::web_sys::{console, MouseEvent};
 use leptos::*;
 
@@ -12,7 +13,7 @@ pub fn Counter() -> impl IntoView {
   };
 
   view! {
-    <Flex vertical=true>
+    <Flex vertical=true gap=v!(8)>
       <h1>"Counter"</h1>
       <h2>{count}</h2>
       <button on:click=increment>"Increment"</button>
